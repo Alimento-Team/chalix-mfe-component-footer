@@ -1,0 +1,53 @@
+.chalix-footer {
+    background-color: #3563c1;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+
+    .chalix-footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-content {
+        text-align: center;
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+
+            &:first-child {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chalix-footer {
+        .chalix-footer-container {
+            padding: 0 15px;
+        }
+
+        .footer-content {
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .chalix-footer {
+        padding: 15px 0;
+
+        .footer-content {
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}

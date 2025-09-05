@@ -1,7 +1,7 @@
 {
-  "name": "@edx/frontend-component-footer",
-  "version": "1.0.0-semantically-released",
-  "description": "Footer component for use when building Open edX frontend applications",
+  "name": "@chalix/frontend-component-footer",
+  "version": "1.0.0",
+  "description": "The Chalix footer component for Open edX with Vietnamese localization",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
