@@ -1,13 +1,16 @@
 {
   "name": "@chalix/frontend-component-footer",
-  "version": "1.0.0-semantically-released",
+  "version": "1.0.0",
   "description": "Footer component for use when building Chalix Open edX frontend applications",
   "main": "dist/index.js",
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "@chalix:registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "scripts": {
     "build": "make build",
+    "prepare": "npm run build",
     "i18n_extract": "fedx-scripts formatjs extract",
     "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
     "lint:fix": "fedx-scripts eslint --fix --ext .js --ext .jsx .",
