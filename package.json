@@ -1,5 +1,5 @@
 {
-  "name": "@alimento-team/chalix-frontend-component-footer",
+  "name": "@chalix/frontend-component-footer",
   "version": "1.0.0",
   "description": "Footer component for use when building Chalix Open edX frontend applications",
   "main": "dist/index.js",
