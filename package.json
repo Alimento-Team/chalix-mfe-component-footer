@@ -9,8 +9,9 @@
     "access": "public"
   },
   "scripts": {
-    "build": "echo 'Using pre-built components from dist/ folder'",
-    "prepare": "echo 'Using pre-built components from dist/ folder'",
+    "build": "echo 'Skipping build - using pre-built components from dist/ folder'",
+    "build:dev": "fedx-scripts webpack --mode=development",
+    "prepare": "echo 'Skipping prepare step'",
     "i18n_extract": "fedx-scripts formatjs extract",
     "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
     "lint:fix": "fedx-scripts eslint --fix --ext .js --ext .jsx .",
@@ -44,6 +45,9 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/user-event": "^14.6.1",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
     "prop-types": "15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -51,7 +55,12 @@
     "react-router-dom": "6.30.1",
     "react-test-renderer": "18.3.1",
     "redux": "4.2.1",
-    "semantic-release": "21.1.2"
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "semantic-release": "21.1.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.7.2",
