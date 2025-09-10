@@ -1,40 +1,66 @@
 // CommonJS entry point for Chalix Footer Component
-// This is a temporary stub for webpack compatibility
+const React = require('react');
 
-// For now, export simple placeholders that webpack can resolve
-module.exports = {
-  default: function ChalixFooterDefault() { 
-    return require('react').createElement('div', {}, 'Chalix Footer Loading...'); 
-  },
-  ChalixFooter: function ChalixFooter(props) {
-    const React = require('react');
-    const year = props?.copyrightYear || new Date().getFullYear();
-    const person = props?.responsiblePerson || 'Nguyễn Văn A';
-    
-    return React.createElement('footer', { 
-      className: 'chalix-footer',
-      style: { 
-        backgroundColor: '#f8f9fa', 
-        padding: '20px', 
-        textAlign: 'center',
-        borderTop: '1px solid #dee2e6'
-      }
-    }, [
-      React.createElement('div', { key: 'content', className: 'chalix-footer-content' }, [
-        React.createElement('p', { key: 'responsible', className: 'footer-text' }, `Chịu trách nhiệm nội dung bởi ${person}`),
-        React.createElement('p', { key: 'copyright', className: 'footer-text' }, `Copyright@${year}`)
-      ])
-    ]);
-  },
-  messages: {},
-  EVENT_NAMES: {},
-  StudioFooter: function StudioFooter() { 
-    return require('react').createElement('div', {}, 'Studio Footer'); 
-  },
-  FooterSlot: function FooterSlot() { 
-    return require('react').createElement('div', {}, 'Footer Slot'); 
-  },
-  StudioFooterSlot: function StudioFooterSlot() { 
-    return require('react').createElement('div', {}, 'Studio Footer Slot'); 
+// Self-contained ChalixFooter component
+function ChalixFooter(props) {
+  const year = props?.copyrightYear || new Date().getFullYear();
+  const person = props?.responsiblePerson || 'Nguyễn Văn A';
+  
+  return React.createElement('footer', { 
+    className: 'chalix-footer',
+    style: { 
+      backgroundColor: '#f8f9fa', 
+      padding: '20px', 
+      textAlign: 'center',
+      borderTop: '1px solid #dee2e6',
+      marginTop: 'auto'
+    }
+  }, 
+    React.createElement('div', { className: 'chalix-footer-content' }, [
+      React.createElement('p', { 
+        key: 'responsible', 
+        className: 'footer-text',
+        style: { margin: '5px 0', fontSize: '14px', color: '#6c757d' }
+      }, `Chịu trách nhiệm nội dung bởi ${person}`),
+      React.createElement('p', { 
+        key: 'copyright', 
+        className: 'footer-text',
+        style: { margin: '5px 0', fontSize: '14px', color: '#6c757d' }
+      }, `Copyright © ${year}`)
+    ])
+  );
+}
+
+// Add PropTypes if available
+if (typeof require !== 'undefined') {
+  try {
+    const PropTypes = require('prop-types');
+    ChalixFooter.propTypes = {
+      responsiblePerson: PropTypes.string,
+      copyrightYear: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    };
+  } catch (e) {
+    // PropTypes not available, skip
   }
+}
+
+// Default Footer component (fallback to ChalixFooter)
+function Footer(props) {
+  return ChalixFooter(props);
+}
+
+// Export all components
+module.exports = Footer;
+module.exports.default = Footer;
+module.exports.ChalixFooter = ChalixFooter;
+module.exports.messages = {};
+module.exports.EVENT_NAMES = {};
+module.exports.StudioFooter = function StudioFooter() { 
+  return React.createElement('div', { className: 'studio-footer' }, 'Studio Footer'); 
+};
+module.exports.FooterSlot = function FooterSlot(props) { 
+  return React.createElement('div', { className: 'footer-slot' }, props.children || 'Footer Slot'); 
+};
+module.exports.StudioFooterSlot = function StudioFooterSlot(props) { 
+  return React.createElement('div', { className: 'studio-footer-slot' }, props.children || 'Studio Footer Slot'); 
 };
