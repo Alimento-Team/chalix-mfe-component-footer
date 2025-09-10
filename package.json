@@ -2,7 +2,7 @@
   "name": "@chalix/frontend-component-footer",
   "version": "1.0.0",
   "description": "Footer component for use when building Chalix Open edX frontend applications",
-  "main": "dist/index.js",
+  "main": "index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "@alimento-team:registry": "https://npm.pkg.github.com",
