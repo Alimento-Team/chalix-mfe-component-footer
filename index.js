@@ -4,7 +4,7 @@ const React = require('react');
 // Self-contained ChalixFooter component
 function ChalixFooter(props) {
   const year = props?.copyrightYear || new Date().getFullYear();
-  const person = props?.responsiblePerson || 'Nguyễn Văn A';
+  const person = props?.responsiblePerson || 'Chalix Person';
   
   return React.createElement('footer', { 
     className: 'chalix-footer',
